@@ -1,0 +1,2 @@
+#!/bin/bash
+docker start `docker ps -a -f "name=$1-" --format '{{.Names}}'`
