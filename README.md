@@ -20,7 +20,7 @@ The setup was tested for following environments:
 - Make sure your Linux or WSL2 environment has access to the Internet (directly or via properly configured HTTP/HTTPS proxy)
 - You must have Docker installed and accessible from WSL2 by a) having docker services running in WSL2 or b) using Docker for Desktop
 - Make sure you have `sudo` permissions
-- You need to have `curl` and [helm installed](https://helm.sh/docs/intro/install/) on your Linux environment
+- You need to have `curl`, `tar` and [helm installed](https://helm.sh/docs/intro/install/) on your Linux environment
 
 ### Really.. I want to start it now and create a cluster named `mycluster`
 
@@ -104,7 +104,7 @@ It will call the following sub-scripts:
 
       This scripts deploys the [Kubernetes dashboard](https://github.com/kubernetes/dashboard) management UI from the original helm chart.
 
-      Together with the Ingress component from previous step the UI should appear for the local URI [https://k8sdash](https://k8sdash)
+      Together with the Ingress component from previous step the UI should appear for the local URI [https://dash.k8s.local](https://dash.k8s.local)
 
       **Important:**
 
