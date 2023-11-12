@@ -106,6 +106,10 @@ It will call the following sub-scripts:
 
       Together with the Ingress component from previous step the UI should appear for the local URI [https://dash.k8s.local](https://dash.k8s.local)
 
+   5. `cluster-system/sealed-secrets/install.sh`
+
+      Installs Sealed Secrets support for the cluster. Read more in the [docs about Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets#sealed-secrets-for-kubernetes)
+
       **Important:**
 
       **Install the self-signed root certificate into your local browser or computer truststore for root certificates.**
