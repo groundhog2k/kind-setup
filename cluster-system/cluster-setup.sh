@@ -21,4 +21,5 @@ cd ../k8s-dashboard
 
 ## 6. Install sealed-secrets
 cd ../sealed-secrets
-./instal.sh
+./install.sh
+

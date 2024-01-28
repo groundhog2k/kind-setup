@@ -3,3 +3,6 @@ fullnameOverride: metrics-server
 args:
   - --kubelet-insecure-tls
   - --metric-resolution=15s
+
+image:
+  tag: "v0.7.0"
