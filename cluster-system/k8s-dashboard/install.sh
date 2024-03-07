@@ -9,11 +9,11 @@ kubectl apply -n cluster-system -f serviceaccount.yaml
 kubectl delete clusterrolebinding kubernetes-dashboard -n cluster-system --ignore-not-found=true
 kubectl create clusterrolebinding kubernetes-dashboard -n cluster-system --clusterrole=cluster-admin --serviceaccount=cluster-system:kubernetes-dashboard
 
-if grep -q k8sdash /etc/hosts; then
-  echo "k8sdash already in hosts file"
+if grep -q dash.k8s.local /etc/hosts; then
+  echo "dash.k8s.local already in hosts file"
 else
-  echo "Adding k8sdash to hosts file"
-  echo "127.0.0.1 k8sdash" | sudo tee -a /etc/hosts
+  echo "Adding dash.k8s.local to hosts file"
+  echo "127.0.0.1 dash.k8s.local" | sudo tee -a /etc/hosts
 fi
 echo "<<<<< Kubernetes dashboard ready."
 

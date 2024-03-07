@@ -3,7 +3,7 @@ app:
     enabled: true
     useDefaultIngressClass: true
     hosts:
-      - "k8sdash"
+      - "dash.k8s.local"
     issuer:
       name: local-ca
       scope: cluster
