@@ -8,9 +8,7 @@ app:
       name: local-ca
       scope: cluster
     tls:
-      - hosts:
-          - "k8sdash"
-        secretName: dash-k8s-local
+      secretName: dash-k8s-local
 
 api:
   scaling:
