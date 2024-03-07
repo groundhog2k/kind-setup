@@ -1,20 +1,17 @@
-fullnameOverride: kubernetes-dashboard
+app:
+  ingress:
+    enabled: true
+    useDefaultIngressClass: true
+    hosts:
+      - "k8sdash"
+    issuer:
+      name: local-ca
+      scope: cluster
+    tls:
+      - hosts:
+          - "k8sdash"
+        secretName: dash-k8s-local
 
-metricsScraper:
-  enabled: true
-
-extraArgs:
-  - --enable-insecure-login
-  - --enable-skip-login
-
-ingress:
-  enabled: true
-  hosts:
-    - "dash.k8s.local"
-  annotations:
-    cert-manager.io/cluster-issuer: local-ca
-
-  tls:
-    - hosts:
-        - "dash.k8s.local"
-      secretName: dash-k8s-local
+api:
+  scaling:
+    replicas: 1
