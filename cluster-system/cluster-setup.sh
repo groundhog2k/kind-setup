@@ -18,3 +18,7 @@ cd ../ingress-nginx
 ## 5. Install kubernetes dashboard
 cd ../k8s-dashboard
 ./install.sh
+
+## 6. Install sealed-secrets
+cd ../sealed-secrets
+./install.sh

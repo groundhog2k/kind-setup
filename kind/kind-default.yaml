@@ -13,3 +13,6 @@ nodes:
 - role: worker
 - role: worker
 - role: worker
+networking:
+  # the default CNI will not be installed
+  disableDefaultCNI: true

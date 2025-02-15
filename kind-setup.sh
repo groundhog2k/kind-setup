@@ -2,7 +2,7 @@
 # Bootstrap a Kind based Kubernetes setup with metrics, ingress, cert-manager and K8s dashboard
 
 ## 0. Install latest kind first
-curl -Lo kind-linux-amd64 https://kind.sigs.k8s.io/dl/v0.23.0/kind-linux-amd64
+curl -Lo kind-linux-amd64 https://kind.sigs.k8s.io/dl/v0.27.0/kind-linux-amd64
 chmod +x ./kind-linux-amd64
 chmod +x scripts/kind*
 sudo mv ./kind-linux-amd64 /usr/local/bin/kind
@@ -17,4 +17,4 @@ cd kind
 cd ../cluster-system
 ./cluster-setup.sh
 
-echo "*** Finished! Enjoy your local K8d environment. ***"
+echo "*** Finished! Enjoy your local Kubernetes environment. ***"
