@@ -64,6 +64,19 @@ Uninstall everything related to the kind cluster with a simple:
 kind delete clusters mycluster
 ```
 
+## Troubleshooting
+
+### What if cluster doesn't start after a machine or docker restart?
+
+In some cases (restart of machine, WSL2 or docker) the cluster doesn't fully start and you will see that some of the worker node IP adresses overlap with control planes IP address. (`kubectl get nodes -o wide`)
+
+If this happen you can reset the worker nodes and assign static IP addresses to the workers.
+A simple script will do this automatically for you:
+
+```bash
+kindreset mycluster
+```
+
 ---
 
 ## Give me the details

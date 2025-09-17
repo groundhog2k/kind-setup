@@ -1,3 +1,14 @@
 #!/bin/bash
 clustername=${1:kind}
-docker stop `docker ps -f "name=$clustername-" --format '{{.Names}}'`
+containers=$(docker ps -f "name=$clustername-" --format '{{.Names}}')
+if [ -z "$containers" ]; then
+  echo "No kind cluster containers found with name prefix '$clustername-'"
+  exit 1
+else
+  echo "Stopping kind cluster containers with name prefix '$clustername-'"
+  for container in $containers; do
+    echo "Stopping container: $container"
+    docker stop "$container"
+  done
+  echo "All containers with prefix '$clustername-' have been stopped."
+fi
