@@ -1,0 +1,11 @@
+#!/bin/bash
+clustername=${1:kind}
+cpip=$(kubectl get nodes devcluster-control-plane -o jsonpath='{.status.addresses[?(@.type=="InternalIP")].address}')
+echo "Stopping container: $clustername-control-plane"
+docker stop "$clustername-control-plane"
+echo "Disconnecting container: $clustername-control-plane from network 'kind'"
+docker network disconnect kind "$clustername-control-plane"
+echo "Reconnecting container: $clustername-control-plane to network 'kind' with IP '$cpip'"
+docker network connect kind "$clustername-control-plane" --ip "$cpip"
+echo "Starting container: $clustername-control-plane"
+docker start "$clustername-control-plane"

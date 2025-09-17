@@ -87,7 +87,7 @@ For Linux and WSL2 it will simply install *kind* and prepare a few more services
 
 ### All the scripts in detail
 
-The script `kind-setup.sh [name]` builds the bracket around a few other scripts.
+The script `kind-setup.sh [name] [version]` builds the bracket around a few other scripts.
 It will call the following sub-scripts:
 
 1. `kind/prepare-kind.sh [name]`

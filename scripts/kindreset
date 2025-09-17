@@ -23,6 +23,4 @@ else
     docker start "$container"
   done
   echo "All worker containers with prefix '$clustername-' have been restarted."
-  docker restart "$clustername-control-plane"
-  echo "Control plane container '$clustername-control-plane' has been restarted."
 fi
