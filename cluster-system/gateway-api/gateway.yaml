@@ -1,0 +1,23 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: gateway
+  namespace: cluster-system
+  annotations:
+    cert-manager.io/cluster-issuer: local-ca
+    networking.istio.io/service-type: NodePort
+spec:
+  gatewayClassName: istio
+  listeners:
+    - name: default-https
+      hostname: "k8sdash"
+      port: 42443
+      protocol: HTTPS
+      tls:
+       mode: Terminate
+       certificateRefs:
+         - name: k8sdash-local-tls
+           kind: Secret
+      allowedRoutes:
+        namespaces:
+          from: All
