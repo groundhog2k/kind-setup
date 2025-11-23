@@ -1,6 +1,9 @@
+kong:
+  enabled: false
+
 app:
   ingress:
-    enabled: true
+    enabled: false
     useDefaultIngressClass: true
     hosts:
       - "k8sdash"
@@ -10,6 +13,3 @@ app:
     tls:
       secretName: k8sdash
 
-api:
-  scaling:
-    replicas: 1

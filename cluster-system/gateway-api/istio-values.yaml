@@ -1,2 +1,4 @@
 global:
   istioNamespace: cluster-system
+  logging:
+    level: "default:debug"

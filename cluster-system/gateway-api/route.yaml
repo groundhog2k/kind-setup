@@ -12,7 +12,14 @@ spec:
     - matches:
         - path:
             type: PathPrefix
+            value: /api
+      backendRefs:
+        - name: k8s-dashboard-kubernetes-dashboard-api
+          port: 8000
+    - matches:
+        - path:
+            type: PathPrefix
             value: /
       backendRefs:
-        - name: k8s-dashboard-kong-proxy
-          port: 443
+        - name: k8s-dashboard-kubernetes-dashboard-web
+          port: 8000

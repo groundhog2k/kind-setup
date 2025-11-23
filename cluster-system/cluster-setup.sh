@@ -3,6 +3,8 @@ master_nodes=$(kubectl get nodes -o custom-columns=":metadata.name" -l "node-rol
 kubectl taint node $master_nodes node-role.kubernetes.io/control-plane:NoSchedule
 ## 1. Create internal namespace
 kubectl apply -f namespace.yaml
+## 1.a Install Gateway API
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.4.0/standard-install.yaml
 ## 2. Install metrics-server
 cd metrics-server
 ./install.sh
