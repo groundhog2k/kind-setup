@@ -4,8 +4,7 @@ metadata:
   name: gateway
   namespace: cluster-system
   annotations:
-    cert-manager.io/cluster-issuer: local-ca
-    networking.istio.io/service-type: NodePort
+    # networking.istio.io/service-type: NodePort
 spec:
   gatewayClassName: istio
   listeners:
