@@ -4,14 +4,19 @@ metadata:
   name: gateway
   namespace: cluster-system
   annotations:
-    # networking.istio.io/service-type: NodePort
+    cert-manager.io/cluster-issuer: local-ca
 spec:
-  gatewayClassName: istio
+  gatewayClassName: envoy-gateway-class
   listeners:
-    - name: default-http
+    - name: default-https
       hostname: "k8sdash"
-      port: 8080
-      protocol: HTTP
+      port: 8443
+      protocol: HTTPS
+      tls:
+       mode: Terminate
+       certificateRefs:
+         - name: k8sdash-local-tls
+           kind: Secret
       allowedRoutes:
         namespaces:
           from: All
