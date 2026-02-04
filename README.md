@@ -113,11 +113,11 @@ It will call the following sub-scripts:
 
       Deploys the [Ingress-nginx](https://github.com/kubernetes/ingress-nginx) service as Kubernetes Ingress Controller.
 
-   4. `cluster-system/k8s-dashboard/install.sh`
+   4. `cluster-system/headlamp/install.sh`
 
-      This scripts deploys the [Kubernetes dashboard](https://github.com/kubernetes/dashboard) management UI from the original helm chart.
+      This scripts deploys [Headlamp](https://github.com/kubernetes-sigs/headlamp/) as K8s management UI from the original helm chart.
 
-      Together with the Ingress component from previous step the UI should appear for the local URI [https://k8sdash](https://k8sdash)
+      Together with the Ingress component from previous step the UI should appear for the local URI [https://headlamp](https://headlamp)
 
    5. `cluster-system/sealed-secrets/install.sh`
 

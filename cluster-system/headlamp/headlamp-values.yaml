@@ -1,0 +1,17 @@
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: local-ca
+  hosts:
+    - host: headlamp
+      paths:
+        - path: /
+          type: ImplementationSpecific
+  tls:
+    - secretName: headlamp
+      hosts:
+        - headlamp
+
+config:
+  inCluster: true
+  inClusterContextName: "local-devcluster"

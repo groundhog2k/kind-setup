@@ -15,8 +15,8 @@ cd ../cert-manager
 cd ../ingress-nginx
 ./install.sh
 
-## 5. Install kubernetes dashboard
-cd ../k8s-dashboard
+## 5. Install headlamp as K8s dashboard
+cd ../headlamp
 ./install.sh
 
 ## 6. Install sealed-secrets
