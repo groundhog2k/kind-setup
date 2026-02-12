@@ -6,8 +6,8 @@ helm upgrade headlamp headlamp/headlamp -n cluster-system -f headlamp-values.yam
 sleep 5
 kubectl create serviceaccount -n cluster-system headlamp-admin
 kubectl apply -n cluster-system -f serviceaccount.yaml
-kubectl delete clusterrolebinding headlamp-admin -n cluster-system --ignore-not-found=true
-kubectl create clusterrolebinding headlamp-admin -n cluster-system --clusterrole=cluster-admin --serviceaccount=cluster-system:headlamp-admin
+kubectl delete clusterrolebinding headlamp-admin-user -n cluster-system --ignore-not-found=true
+kubectl create clusterrolebinding headlamp-admin-user -n cluster-system --clusterrole=cluster-admin --serviceaccount=cluster-system:headlamp-admin
 
 if grep -q headlamp /etc/hosts; then
   echo "headlamp already in hosts file"
