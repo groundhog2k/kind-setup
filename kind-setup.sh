@@ -17,8 +17,8 @@ sudo cp ./scripts/kind* /usr/local/bin
 cd kind
 ./prepare-kind.sh $clustername $imageversion
 
-../scripts/stickcp $clustername
-../scripts/kindreset $clustername
+#../scripts/stickcp $clustername
+#../scripts/kindreset $clustername
 
 ## 2. Prepare cluster services
 cd ../cluster-system
