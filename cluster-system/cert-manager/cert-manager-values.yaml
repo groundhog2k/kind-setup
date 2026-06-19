@@ -6,3 +6,9 @@ prometheus:
 
 extraArgs:
   - --cluster-resource-namespace=cluster-system
+
+config:
+  enableGatewayAPI: true
+  enableGatewayAPIListenerSet: true
+  featureGates:
+    ListenerSets: true

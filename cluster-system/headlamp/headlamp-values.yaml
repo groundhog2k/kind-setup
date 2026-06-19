@@ -1,5 +1,5 @@
 ingress:
-  enabled: true
+  enabled: false
   annotations:
     cert-manager.io/cluster-issuer: local-ca
   hosts:
@@ -12,6 +12,15 @@ ingress:
       hosts:
         - headlamp
 
+httpRoute:
+  enabled: true
+  parentRefs:
+    - kind: ListenerSet
+      name: headlamp-listenerset
+      namespace: cluster-system
+  hostnames:
+    - headlamp
+  
 config:
   inCluster: true
   inClusterContextName: "local-devcluster"
