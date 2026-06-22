@@ -15,11 +15,9 @@ ingress:
 httpRoute:
   enabled: true
   parentRefs:
-    - kind: ListenerSet
-      name: headlamp-listenerset
-      namespace: cluster-system
+    - name: cluster-envoygateway
   hostnames:
-    - headlamp
+    - headlamp.k8s.local
   
 config:
   inCluster: true
