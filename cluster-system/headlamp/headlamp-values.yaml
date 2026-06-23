@@ -16,6 +16,7 @@ httpRoute:
   enabled: true
   parentRefs:
     - name: cluster-envoygateway
+      sectionName: https
   hostnames:
     - headlamp.k8s.local
   
