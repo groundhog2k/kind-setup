@@ -3,19 +3,21 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: local-ca
   hosts:
-    - host: headlamp
+    - host: headlamp.k8s.local
       paths:
         - path: /
           type: ImplementationSpecific
   tls:
     - secretName: headlamp
       hosts:
-        - headlamp
+        - headlamp.k8s.local
 
 httpRoute:
   enabled: true
   parentRefs:
     - name: cluster-envoygateway
+      group: gateway.networking.k8s.io
+      kind: Gateway
       sectionName: https
   hostnames:
     - headlamp.k8s.local
