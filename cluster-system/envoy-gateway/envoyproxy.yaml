@@ -9,3 +9,15 @@ spec:
     kubernetes:
       envoyService:
         type: NodePort
+        externalTrafficPolicy: Cluster
+        patch:
+          type: StrategicMerge
+          value:
+            spec:
+              ports:
+              - name: http
+                nodePort: 32080
+                port: 80
+              - name: https
+                nodePort: 32443
+                port: 443
