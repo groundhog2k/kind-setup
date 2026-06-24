@@ -13,8 +13,15 @@ spec:
       kind: EnvoyProxy
       name: envoy-proxy
   listeners:
+    # - name: http
+    #   hostname: "headlamp"
+    #   port: 80
+    #   protocol: HTTP
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: All
     - name: https
-      hostname: "headlamp.k8s.local"
+      hostname: "headlamp"
       port: 443
       protocol: HTTPS
       allowedRoutes:
@@ -23,7 +30,6 @@ spec:
       tls:
         mode: Terminate
         certificateRefs:
-          - name: headlamp-https-cert
+          - name: headlamp-https-cert3
             kind: Secret
-            group: core
             namespace: cluster-system
