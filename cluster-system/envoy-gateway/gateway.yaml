@@ -12,24 +12,27 @@ spec:
       group: gateway.envoyproxy.io
       kind: EnvoyProxy
       name: envoy-proxy
+  allowedListeners:
+    namespaces:
+      from: All
   listeners:
-    # - name: http
-    #   hostname: "headlamp"
-    #   port: 80
-    #   protocol: HTTP
-    #   allowedRoutes:
-    #     namespaces:
-    #       from: All
-    - name: https
-      hostname: "headlamp"
-      port: 443
-      protocol: HTTPS
+    - name: http
+      hostname: "dummy"
+      port: 80
+      protocol: HTTP
       allowedRoutes:
         namespaces:
           from: All
-      tls:
-        mode: Terminate
-        certificateRefs:
-          - name: headlamp-https-cert3
-            kind: Secret
-            namespace: cluster-system
+    # - name: https
+    #   hostname: "headlamp"
+    #   port: 443
+    #   protocol: HTTPS
+    #   allowedRoutes:
+    #     namespaces:
+    #       from: All
+    #   tls:
+    #     mode: Terminate
+    #     certificateRefs:
+    #       - name: headlamp-https-cert4
+    #         kind: Secret
+    #         namespace: cluster-system
