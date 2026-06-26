@@ -1,17 +1,3 @@
-ingress:
-  enabled: false
-  annotations:
-    cert-manager.io/cluster-issuer: local-ca
-  hosts:
-    - host: headlamp
-      paths:
-        - path: /
-          type: ImplementationSpecific
-  tls:
-    - secretName: headlamp
-      hosts:
-        - headlamp
-
 httpRoute:
   enabled: true
   parentRefs:

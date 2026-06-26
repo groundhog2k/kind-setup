@@ -2,6 +2,8 @@
 echo ">>>>> Installing Headlamp"
 helm repo add headlamp https://kubernetes-sigs.github.io/headlamp/ --force-update
 helm upgrade headlamp headlamp/headlamp -n cluster-system -f headlamp-values.yaml --wait --wait-for-jobs -i
+kubectl apply -f listener.yaml -n cluster-system
+
 ### (Re-)Create headlamp-admin user to have full access
 sleep 5
 kubectl create serviceaccount -n cluster-system headlamp-admin
@@ -20,4 +22,3 @@ echo "<<<<< Headlamp ready."
 echo -e "\nUse the following token for Headlamp login:\n"
 kubectl get secret -n cluster-system headlamp-admin -o jsonpath={".data.token"} | base64 -d
 echo -e "\n"
-

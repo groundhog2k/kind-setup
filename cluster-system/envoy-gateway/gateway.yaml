@@ -23,16 +23,3 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-    # - name: https
-    #   hostname: "headlamp"
-    #   port: 443
-    #   protocol: HTTPS
-    #   allowedRoutes:
-    #     namespaces:
-    #       from: All
-    #   tls:
-    #     mode: Terminate
-    #     certificateRefs:
-    #       - name: headlamp-https-cert4
-    #         kind: Secret
-    #         namespace: cluster-system

@@ -3,22 +3,26 @@ master_nodes=$(kubectl get nodes -o custom-columns=":metadata.name" -l "node-rol
 kubectl taint node $master_nodes node-role.kubernetes.io/control-plane:NoSchedule
 ## 1. Create internal namespace
 kubectl apply -f namespace.yaml
-## 2. Install metrics-server
+
+## 2. Install Kubernetes Gateway API CRDs
+kubectl apply --server-side -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/standard-install.yaml
+
+## 3. Install metrics-server
 cd metrics-server
 ./install.sh
 
-## 3. Install jetstack cert-manager, local rootca and cert issuer
+## 4. Install jetstack cert-manager, local rootca and cert issuer
 cd ../cert-manager
 ./install.sh
 
-## 4. Install ingress-nginx
-cd ../ingress-nginx
+## 5. Install envoy-gateway
+cd ../envoy-gateway
 ./install.sh
 
-## 5. Install headlamp as K8s dashboard
+## 6. Install headlamp as K8s dashboard
 cd ../headlamp
 ./install.sh
 
-## 6. Install sealed-secrets
+## 7. Install sealed-secrets
 cd ../sealed-secrets
 ./install.sh

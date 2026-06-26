@@ -109,9 +109,9 @@ It will call the following sub-scripts:
 
       The script generates a self-signed root certificate (if not already existend in the [`certs`](https://github.com/groundhog2k/kind-setup/tree/main/cluster-system/cert-manager/certs) folder) and deploys this together with the [Jetstack cert-manager](https://github.com/cert-manager/cert-manager).
 
-   3. `cluster-system/ingress-nginx/install.sh`
+   3. `cluster-system/envoy-gateway/install.sh`
 
-      Deploys the [Ingress-nginx](https://github.com/kubernetes/ingress-nginx) service as Kubernetes Ingress Controller.
+      Deploys the [Envoy-gateway](https://github.com/envoyproxy/gateway) service as Kubernetes Gateway API Controller.
 
    4. `cluster-system/headlamp/install.sh`
 

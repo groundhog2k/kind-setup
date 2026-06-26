@@ -1,7 +1,4 @@
 #!/bin/bash
-echo ">>>>> Installing Kubernetes Gateway API CRDs"
-kubectl apply --server-side -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/standard-install.yaml
-echo "<<<<< Kubernetes Gateway API CRDs ready."
 echo ">>>>> Installing Jetstack cert-manager"
 helm repo add jetstack https://charts.jetstack.io --force-update
 if [ ! -f certs/tls.crt ] || [ ! -f certs/tls.key ]; then
