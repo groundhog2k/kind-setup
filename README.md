@@ -2,7 +2,7 @@
 
 ## What is it good for?
 
-This project will make it very easy to automatically setup a Kind based Kubernetes cluster with one master and three agent nodes on your local development machine with metrics, certificate manager, ingress controller and Kubernetes dashboard.
+This project will make it very easy to automatically setup a Kind based Kubernetes cluster with one master and three agent nodes on your local development machine with metrics, certificate manager, ingress controller and Headlamp as Kubernetes dashboard.
 
 It supports native Linux and also a WSL2 based setup.
 
@@ -32,7 +32,7 @@ cd kind-setup
 
 Install the self-signed root certificate that was generated in `./cluster-system/cert-manager/certs/tls.crt` into your local browser or computer truststore for root certificates.
 
-When setup is finished and all services are running open [https://k8sdash](https://k8sdash) in your browser and enjoy Kubernetes.
+When setup is finished and all services are running open [https://headlamp](https://headlamp) in your browser and enjoy Kubernetes.
 
 **Important - For Windows only:**
 
@@ -83,7 +83,7 @@ kindreset mycluster
 
 ### For Linux and WSL2
 
-For Linux and WSL2 it will simply install *kind* and prepare a few more services like, metrics server, Jetstack certificate manager, Ingress nginx and Kubernetes dashboard.
+For Linux and WSL2 it will simply install *kind* and prepare a few more services like, metrics server, Jetstack certificate manager, Envoy gateway and Headlamp as dashboard.
 
 ### All the scripts in detail
 
@@ -117,7 +117,7 @@ It will call the following sub-scripts:
 
       This scripts deploys [Headlamp](https://github.com/kubernetes-sigs/headlamp/) as K8s management UI from the original helm chart.
 
-      Together with the Ingress component from previous step the UI should appear for the local URI [https://headlamp](https://headlamp)
+      Together with the Envoy gateway component from previous step the UI should appear for the local URI [https://headlamp](https://headlamp)
 
    5. `cluster-system/sealed-secrets/install.sh`
 
