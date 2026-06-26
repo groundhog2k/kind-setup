@@ -39,7 +39,7 @@ When setup is finished and all services are running open [https://headlamp](http
 Edit the hosts file (typically in [`C:\Windows\system32\drivers\etc\hosts`](C:/Windows/system32/drivers/etc/hosts)) and add a mapping line for the hostname k8sdash:
 
 ```text
-127.0.0.1 k8sdash
+127.0.0.1 headlamp
 ```
 
 ## How to stop or (re)-start?
