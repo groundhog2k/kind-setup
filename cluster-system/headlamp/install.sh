@@ -2,7 +2,7 @@
 echo ">>>>> Installing Headlamp"
 helm repo add headlamp https://kubernetes-sigs.github.io/headlamp/ --force-update
 helm upgrade headlamp headlamp/headlamp -n cluster-system -f headlamp-values.yaml --wait --wait-for-jobs -i
-kubectl apply -f listener.yaml -n cluster-system
+kubectl apply -f listenerset.yaml -n cluster-system
 
 ### (Re-)Create headlamp-admin user to have full access
 sleep 5
