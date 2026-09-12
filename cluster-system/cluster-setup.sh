@@ -5,7 +5,7 @@ kubectl taint node $master_nodes node-role.kubernetes.io/control-plane:NoSchedul
 kubectl apply -f namespace.yaml
 
 ## 2. Install Kubernetes Gateway API CRDs
-kubectl apply --server-side -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/standard-install.yaml
+kubectl apply --server-side -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.6.1/standard-install.yaml
 
 ## 3. Install metrics-server
 cd metrics-server
